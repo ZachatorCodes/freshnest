@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # Test route to confirm cookie and session middleware functionality
+  get '/hello', to: 'application#hello_world'
 end
