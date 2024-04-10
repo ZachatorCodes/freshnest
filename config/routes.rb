@@ -10,4 +10,7 @@ Rails.application.routes.draw do
 
   # Test route to confirm cookie and session middleware functionality
   get '/hello', to: 'application#hello_world'
+
+  # Handle route fallbacks
+  get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end
